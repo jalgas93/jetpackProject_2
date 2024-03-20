@@ -10,10 +10,11 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.compose.jetpack.model.Result
 
 //TODO List<Meal>
 @Composable
-fun SuccessComponent(recipes: List<String>, onSearchClicked: (query: String) -> Unit) {
+fun SuccessComponent(results: List<Result>, onSearchClicked: (query: String) -> Unit) {
     Column(modifier = Modifier.fillMaxSize()) {
         Text(
             text = "RecipeFinder",
@@ -23,6 +24,6 @@ fun SuccessComponent(recipes: List<String>, onSearchClicked: (query: String) -> 
             modifier = Modifier.padding(8.dp)
         )
         SearchComponent(onSearchClicked = onSearchClicked)
-        RecipesList(recipes = recipes)
+        RecipesList(result = results)
     }
 }
